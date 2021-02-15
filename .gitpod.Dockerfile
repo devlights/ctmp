@@ -11,6 +11,5 @@ USER gitpod
 #
 # More information: https://www.gitpod.io/docs/config-docker/
 RUN sudo apt -q update && \
-    sudo apt -yq upgrade && \
     sudo apt install -yq bc && \
     sudo rm -rf /var/lib/apt/lists/*
