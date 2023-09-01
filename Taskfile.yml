@@ -10,7 +10,7 @@ tasks:
     silent: true
   build:
     cmds:
-      - gcc -g -std=c11 -Wall -Wextra -o app main.c
+      - gcc -g -std=c11 -Wall -Wextra -o app *.c
     sources:
       - ./*.c
     generates:
