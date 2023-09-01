@@ -1,0 +1,27 @@
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task: run
+  init:
+    cmds:
+      - echo -e "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void){\n\treturn EXIT_SUCCESS;\n}\n" > main.c
+    silent: true
+  build:
+    cmds:
+      - gcc -g -std=c11 -Wall -Wextra -o app main.c
+    sources:
+      - ./*.c
+    generates:
+      - app{{exeExt}}
+    method: timestamp
+  run:
+    deps: [build]
+    cmds:
+      - ./app
+  clean:
+    cmds:
+      - rm -f ./app
+      - rm -f ./*.c
+      - rm -rf ./.task
