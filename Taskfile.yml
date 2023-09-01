@@ -6,7 +6,7 @@ tasks:
       - task: run
   init:
     cmds:
-      - echo -e "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void){\n\treturn EXIT_SUCCESS;\n}\n" > main.c
+      - echo -e "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void){\n\treturn EXIT_SUCCESS;\n}" > main.c
     silent: true
   build:
     cmds:
