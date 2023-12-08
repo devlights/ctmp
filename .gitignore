@@ -58,3 +58,5 @@ app
 *.c
 .idea/
 cmake-build-debug/
+CMakeFiles/
+CMakeCache.txt
