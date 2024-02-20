@@ -7,10 +7,12 @@ tasks:
   init:
     cmds:
       - echo -e "#include <stdio.h>\n#include <stdlib.h>\n\nint main(void){\n\treturn EXIT_SUCCESS;\n}" > main.c
+      - echo -e "#ifndef MAIN_H\n#define MAIN_H\n\n\n\n#endif // MAIN_H\n" > main.h
+      - echo -e "#include <stdio.h>\n" > lib.c
     silent: true
   build:
     cmds:
-      - gcc -g -std=c11 -Wall -Wextra -o app *.c
+      - clang -g -std=c11 -Wall -Wextra -I . -I include -o app *.c
     sources:
       - ./*.c
     generates:
@@ -24,4 +26,5 @@ tasks:
     cmds:
       - rm -f ./app
       - rm -f ./*.c
+      - rm -f ./*.h
       - rm -rf ./.task
