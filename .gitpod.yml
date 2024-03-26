@@ -5,7 +5,7 @@ image:
 tasks:
   - name: initial
     init:
-      go install github.com/go-task/task/v3/cmd/task@latest
+      sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d
 
 vscode:
   extensions:
